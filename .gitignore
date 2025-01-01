@@ -1,0 +1,7 @@
+assets/external/
+*.db
+__pycache__/
+*.py[cod]
+.web
+venv/
+msg.txt

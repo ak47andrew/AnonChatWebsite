@@ -52,3 +52,19 @@ class State(rx.State):
     def go_back(self):
         self.selected_chat = None
         self.current_chat_messages = []
+    
+    def get_partner_name(self) -> str:
+        if not self.selected_chat:
+            return "Unknown"
+        for chat in self.chats:
+            if chat["dialog_id"] == self.selected_chat:
+                return chat["partner_name"]
+        return "Unknown"
+    
+    def get_partner_pfp(self) -> Optional[str]:
+        if not self.selected_chat:
+            return None
+        for chat in self.chats:
+            if chat["dialog_id"] == self.selected_chat:
+                return chat["pfp"]
+        return None

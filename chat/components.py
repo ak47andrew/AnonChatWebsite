@@ -39,7 +39,7 @@ def chat_bubble(message: Message):
 def chat_view(messages: List[Message], partner_name:str, pfp:str):
   return rx.container(
         rx.vstack(
-            rx.heading(f"Chat with {partner_name}", size="lg"),
+            rx.heading(f"Chat with {partner_name}", size="5"),
               rx.hstack(
                 rx.cond(
                     pfp,

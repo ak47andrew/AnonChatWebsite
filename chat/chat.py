@@ -14,11 +14,11 @@ def index() -> rx.Component:
                 rx.vstack(
                     rx.button("Back", on_click=State.go_back, margin_bottom="1em"),
 
-                    chat_view(State.current_chat_messages,
-                            next((chat['partner_name'] for chat in State.chats if chat['dialog_id'] == State.selected_chat), "Unknown"),
-                            next((chat['pfp'] for chat in State.chats if chat['dialog_id'] == State.selected_chat), None)
-                            ),
-
+                    chat_view(
+                        State.current_chat_messages,
+                        State.get_partner_name(),
+                        State.get_partner_pfp()
+                    ),
                 ),
 
 
